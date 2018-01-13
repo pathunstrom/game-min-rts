@@ -17,6 +17,12 @@ class Button:
 
         self.pressed = pressed
 
+    def __repr__(self):
+        return f"{type(self).__name__}(_id={self.id}, pressed={self.pressed})"
+
+    def __str__(self):
+        return f"<{type(self).__name__}: id={self.id} pressed={self.pressed} held={self.held}>"
+
 
 class Controller:
 
@@ -50,4 +56,5 @@ class Mouse:
         for button in self.buttons:
             button.update(pressed[button.id])
 
-
+    def __str__(self):
+        return f"{type(self).__name__}(left_button={self.left_button})"
